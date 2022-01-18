@@ -9,10 +9,19 @@
 <head>
 <!-- Maven -->
 <link rel="stylesheet" href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"/>
+
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
+<style type="text/css">
+	body {
+		background: black;
+		color: white;
+	}
+
+</style>
 	<%!
 		String today(){
 			java.text.SimpleDateFormat dt = new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
