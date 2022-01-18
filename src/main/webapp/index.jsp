@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -34,5 +36,33 @@
 								<c:out value="${d1}"/>
 							</c:otherwise>
 							</c:choose></h1>
+	
+	
+	
+	<!-- Exemplo de entrada e saída -->
+	<c:set var="professor" value="O nome do meu professor é Raphael"/>
+	<c:out value="${professor}"/>
+	
+	<c:set var="notaRaphael" value= 100 />
+		
+	<c:if test="${notaRaphael == 100}">
+		<p>Parabéns, sua nota foi = <c:out value="${notaRaphael}"/></p>
+	</c:if>
+	
+	
+	 <c:catch var ="notaLarissa">
+         <% int x = 70;%>
+      </c:catch>
+	
+	<h1>A sua nota foi: <c:choose>
+							<c:when test = "${notaLarissa > 50}">
+								<p>Aprovada = <c:out value="<%= "${notaLarissa}" %>"/></p>
+							</c:when>
+							<c:otherwise>
+								<p>Reprovada </p>
+							</c:otherwise>
+							</c:choose></h1>
+	
+	
 </body>
 </html>
