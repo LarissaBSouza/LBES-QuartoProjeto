@@ -43,26 +43,32 @@
 	<c:set var="professor" value="O nome do meu professor é Raphael"/>
 	<c:out value="${professor}"/>
 	
-	<c:set var="notaRaphael" value= 100 />
+	<c:set var="notaRaphael" value= "100" />
 		
 	<c:if test="${notaRaphael == 100}">
 		<p>Parabéns, sua nota foi = <c:out value="${notaRaphael}"/></p>
 	</c:if>
 	
-	
-	 <c:catch var ="notaLarissa">
-         <% int x = 70;%>
+	<c:catch var ="notaWill">
+         <% int notaWillian = 30;%>
       </c:catch>
+
+      <c:if test = "${notaWill > 0}">
+         <p>Esta foi a nota do Will = <c:out value="${notaWill}"/></p>
+      </c:if>
+      
+      
+	<c:set var="notaLarissa" value= "70" />
+	<c:set var="reprovacao" value="reprovada(o)"/>
 	
-	<h1>A sua nota foi: <c:choose>
-							<c:when test = "${notaLarissa > 50}">
-								<p>Aprovada = <c:out value="<%= "${notaLarissa}" %>"/></p>
+	<h1>Larissa, a sua nota foi: <c:choose>
+							<c:when test = "${(notaLarissa >= 50)}">
+								<c:out value="${notaLarissa}"/>
 							</c:when>
 							<c:otherwise>
-								<p>Reprovada </p>
+								<c:out value="${reprovacao}"/>
 							</c:otherwise>
 							</c:choose></h1>
-	
 	
 </body>
 </html>
